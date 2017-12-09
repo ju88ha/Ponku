@@ -43,7 +43,7 @@ public class AppIO {
    }
 
    public void PhoneNumberToAdd() { // 고객 번호 추가 문장 출력 메소드
-      System.out.println("[PONKU] 추가하고자 하는 고객 번호 11자리를 입력하세요.");
+      System.out.println("[PONKU] 추가하고자 하는 고객 번호를 입력하세요.");
    }
 
    public void NameToAdd() { // 고객 이름 추가 문장 출력 메소드
@@ -54,14 +54,6 @@ public class AppIO {
       System.out.println("[PONKU] 검색하고자 하는 고객번호를 입력해주세요.");
    }
 
-
-   
-   
-   
-   
-   
-   
-   
 //   public void chooseItem() { // 고객&매장 선택 문장 출력 메소드
 //      System.out.println("[PONKU] 고객 관련 항목은 1, 매장관련 항목은 2를 입력해주세요.");
 //   }

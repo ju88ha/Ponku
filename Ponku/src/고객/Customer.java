@@ -42,8 +42,11 @@ public class Customer {
 		return Integer.toString(customers[customerIndex].getPoint());
 	}
 	
-	public Product returnPattern(int customerIndex){
-		return customers[customerIndex].getPattern().getBest();
+	public String returnPattern(int customerIndex){
+		if(customers[customerIndex].getPattern().getBest().equals(null))
+			return "구매기록이 없어요.";
+		else
+			return customers[customerIndex].getPattern().getBest().name();
 	}
 	
 	public int returnHowManyDrinksOfPattern(int customerIndex){
@@ -57,12 +60,13 @@ public class Customer {
 		System.out.println("등급: "+returnGrade(customerIndex));
 		System.out.println("이름: "+returnName(customerIndex));
 		System.out.println("포인트: "+customers[customerIndex].getPoint());
-		System.out.println("구매 패턴: "+customers[customerIndex].getPattern());
+		System.out.println("가장 많이먹은 메뉴: "+returnPattern(customerIndex));
+		System.out.println("가장 많이먹은 메뉴의 수: "+returnHowManyDrinksOfPattern(customerIndex));
 	}
 	
-	private int customerIndex(String a){
+	private int customerIndex(String a){ 
 		for(int i = 0; i < customers.length; i++){
-			if(a.equals(returnName(i)))
+			if(a.equals(customers[i].getphonenumber()))
 				return i;
 		}
 		return -1;	//오류시 -1 반환 

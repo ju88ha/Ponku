@@ -35,6 +35,10 @@ public class Customer_Info {
 	public Customer_Grade getGrade(){
 		return this.grade;
 	}
+	
+	public String getphonenumber(){
+		return this.phonenumber;
+	}
 
 	public Customer_Pattern getPattern() {
 		return pattern;

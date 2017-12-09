@@ -28,14 +28,14 @@ public class AppController {
          case 3:   // 고객 정보 확인 메소드
             confirmCustomer();
             break;
-         case 4:   // 메뉴 추가 메소드
-            addMenu();
-            break;
-         default:   // 1,2,3,4 이내의 숫자가 아니라면
+//         case 4:   // 메뉴 추가 메소드
+//            addMenu();
+//            break;
+         default:   // 1,2,3 이내의 숫자가 아니라면
             appIO.error();   // "[PONKU] : ERROR"
          }
-         GoOrStop = runtheProgram();   // 프로그램 목록 선택 메소드
          appIO.newLine();   // \n
+         GoOrStop = runtheProgram();   // 프로그램 목록 선택 메소드
       }
       appIO.end(); // "[PONKU] 프로그램을 종료합니다."
    }
@@ -45,7 +45,7 @@ public class AppController {
       while (true) {
          appIO.goOrStop();   // "[PONKU] 프로그램을 종료하시려면 0번을, 물건 판매를 하시려면 1번을, 고객 추가를 하시려면 2번을, 고객 정보 확인을 하시려면 3번을, 메뉴 추가를 하시려면 4번을 입력해주세요."
          goOrStop = sc.nextInt();   // 숫자 입력받음
-         if (goOrStop == 0 || goOrStop == 1 || goOrStop == 2 || goOrStop == 3 || goOrStop == 4) { // 0~4 이내의 값이면
+         if (goOrStop == 0 || goOrStop == 1 || goOrStop == 2 || goOrStop == 3 ) { // 0~4 이내의 값이면
             appIO.go(goOrStop);   // "[PONKU] " + inputInt + " 을(를) 입력하셨습니다."
             return goOrStop;
          }
@@ -57,7 +57,7 @@ public class AppController {
       AppIO.outputLine("[PONKU] 판매하고자하는 메뉴의 이름을 적어주세요.");
       String productToSell = sc.next();
       Product p = new Product(productToSell);
-      AppIO.outputLine("[PONKU] 포인트를 적립할 고객번호 11자리를 입력해 주세요.");
+      AppIO.outputLine("[PONKU] 포인트를 적립할 고객번호 8자리를 입력해 주세요.");
       String num = sc.next();
 
       customer.sellProduct(p, num);
