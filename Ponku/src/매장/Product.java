@@ -9,7 +9,6 @@ public class Product {
 		this._name = null;
 		this._cost = 0;
 		this._type = null;
-		this._count = 0;
 	}
 	
 	public Product(String t) {
@@ -46,14 +45,6 @@ public class Product {
 	
 	public void setType(String t) {
 		this._type = t;
-	}
-	
-	public int count() {
-		return this._count;
-	}
-	
-	public void setCount(int co) {
-		this._count = co;
 	}
 	
 }

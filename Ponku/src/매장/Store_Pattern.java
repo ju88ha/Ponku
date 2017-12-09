@@ -8,7 +8,7 @@ public class Store_Pattern { //사람들이 가장 많이 구매하는 거
 	private int numOfBest2;
 	
 	public Store_Pattern(){
-		soldProducts = new Product[20];
+		purchased = new Product[20];
 		best1 = new Product();
 		best2 = new Product();
 		numOfBest1 = 0;
@@ -27,7 +27,7 @@ public class Store_Pattern { //사람들이 가장 많이 구매하는 거
 		
 		for(int i = 0; i<purchased.length;i++){
 			for(int j = 0; j<purchased.length ; j++){
-				if(purchased[i]==purchased[j] && purchased[i]._name != null){
+				if(purchased[i]==purchased[j] && purchased[i].name().equals(null)){
 					num[i]++;
 				}
 			}
@@ -52,8 +52,7 @@ public class Store_Pattern { //사람들이 가장 많이 구매하는 거
 		this.best2 = purchased[bestIndex2];
 		this.numOfBest2 = num[bestIndex2];
 			
-		}
-		
 	}
-
+		
 }
+
