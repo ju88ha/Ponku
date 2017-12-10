@@ -41,7 +41,7 @@ public class Customer {
 	}
 	
 	public String returnPattern(int customerIndex){
-		if(customers[customerIndex].getPattern().getBest().name().equals(null))
+		if(customers[customerIndex].getPattern().getBest()==null)
 			return "구매기록이 없어요.";
 		else
 			return customers[customerIndex].getPattern().getBest().name();

@@ -45,13 +45,13 @@ public class AppController {
    }
 
    private int runtheProgram() {   // 프로그램 목록 선택 메소드
-      int goOrStop;
+      String goOrStop;
       while (true) {
          appIO.goOrStop();   // "[PONKU] 프로그램을 종료하시려면 0번을, 물건 판매를 하시려면 1번을, 고객 추가를 하시려면 2번을, 고객 정보 확인을 하시려면 3번을 입력해주세요."
-         goOrStop = sc.nextInt();   // 숫자 입력받음
-         if (goOrStop == 0 || goOrStop == 1 || goOrStop == 2 || goOrStop == 3) { // 0~3 이내의 값이면
+         goOrStop = sc.next();   // 숫자 입력받음
+         if (goOrStop.equals("0") || goOrStop.equals("1") || goOrStop.equals("2") || goOrStop.equals("3")) { // 0~3 이내의 값이면
             appIO.go(goOrStop);   // "[PONKU] " + inputInt + " 을(를) 입력하셨습니다."
-            return goOrStop;
+            return Integer.parseInt(goOrStop);
          }
          appIO.stop(goOrStop);   // "[PONKU] 0에서 3 이외의 값 " + inputChar + "을(를) 입력하셨습니다. 다시 입력해주세요."
       }

@@ -34,11 +34,11 @@ public class AppIO {
       System.out.println("[PONKU] 프로그램을 종료하시려면 0번을, 물건 판매를 하시려면 1번을, 고객 추가를 하시려면 2번을, 고객 정보 확인을 하시려면 3번을 입력해주세요.");
    }
 
-   public void go(int inputInt) { // 입력 문자 확인 문장 출력 메소드
+   public void go(String inputInt) { // 입력 문자 확인 문장 출력 메소드
       System.out.println("[PONKU] " + inputInt + " 을(를) 입력하셨습니다.");
    }
 
-   public void stop(int inputInt) { // 입력 문자 확인 오류 문장 출력 메소드
+   public void stop(String inputInt) { // 입력 문자 확인 오류 문장 출력 메소드
       System.out.println("[PONKU] 0에서 3 이외의 값 " + inputInt + "을(를) 입력하셨습니다. 다시 입력해주세요.");
    }
 
