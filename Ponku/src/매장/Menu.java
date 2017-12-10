@@ -60,7 +60,7 @@ public class Menu {
       this.setSideMenu(new Product[15]);
       this.setSeasonMenu(new Product[15]);
 
-      this.fixedAllMenu();
+      //this.fixedAllMenu();
 
    }
 
@@ -139,19 +139,19 @@ public class Menu {
 
    public void fixedDrinkMenu() {
 
-      Product OmijaAde = new Product("오미자 에이드", 3500, "Ade");
-      Product OrangeAde = new Product("오렌지 에이드", 3500, "Ade");
-      Product HanrabongAde = new Product("한라봉 에이드", 3800, "Ade");
-      Product PinkBerry = new Product("핑크베리 유스베리", 3800, "Ade");
-      Product Lime = new Product("쿨 라임피지오", 3800, "Ade");
-      Product BlackTeaLemonade = new Product("블랙 티 레모네이드", 3800, "Ade");
+      Product OmijaAde = new Product("오미자에이드", 3500, "Ade");
+      Product OrangeAde = new Product("오렌지에이드", 3500, "Ade");
+      Product HanrabongAde = new Product("한라봉에이드", 3800, "Ade");
+      Product PinkBerry = new Product("핑크베리유스베리", 3800, "Ade");
+      Product Lime = new Product("쿨라임피지오", 3800, "Ade");
+      Product BlackTeaLemonade = new Product("블랙티레모네이드", 3800, "Ade");
       // Product CitronAndGrapefruit = new Product("유자 자몽 에이드", 3800, "Ade");
 
-      Product StrawberryYogurt = new Product("딸기 요거트 스무디", 4000, "Smoothie");
-      Product ChocolateBanana = new Product("초콜릿 바나나 스무디", 4000, "Smoothie");
-      Product MangoFruit = new Product("망고 후르츠 스무디", 4300, "Smoothie");
-      Product PeachYogurt = new Product("피치 요거트 스무디", 4300, "Smoothie");
-      Product BlueBerry = new Product("블루베리 스무디", 4300, "Smoothie");
+      Product StrawberryYogurt = new Product("딸기요거트스무디", 4000, "Smoothie");
+      Product ChocolateBanana = new Product("초콜릿바나나스무디", 4000, "Smoothie");
+      Product MangoFruit = new Product("망고후르츠스무디", 4300, "Smoothie");
+      Product PeachYogurt = new Product("피치요거트스무디", 4300, "Smoothie");
+      Product BlueBerry = new Product("블루베리스무디", 4300, "Smoothie");
       // Product AppleKiwi = new Product("애플키위 스무디", 4300, "Smoothie");
 
       this.drinkMenu()[0] = OmijaAde;
@@ -173,18 +173,18 @@ public class Menu {
 
    public void fixedSideMenu() {
 
-      Product PeachCake = new Product("복숭아 케이크", 4500, "Cake");
+      Product PeachCake = new Product("복숭아케이크", 4500, "Cake");
       Product CreamCheeseCake = new Product("크림치즈케이크", 5000, "Cake");
       Product TiramisuCake = new Product("티라미슈", 4000, "Cake");
 
-      Product InkCheeseMini = new Product("먹물치즈 미니식빵", 5000, "Bread");
+      Product InkCheeseMini = new Product("먹물치즈미니식빵", 5000, "Bread");
       Product GarlicPie = new Product("갈릭파이", 4000, "Bread");
-      Product CaramelChiffon = new Product("카라멜 쉬폰", 5000, "Bread");
+      Product CaramelChiffon = new Product("카라멜쉬폰", 5000, "Bread");
 
-      Product SpicyChicken = new Product("치킨 샌드위치", 5500, "Sandwich");
-      Product YoungLeaf = new Product("어린잎 채소 샌드위치", 5000, "Sandwich");
+      Product SpicyChicken = new Product("치킨샌드위치", 5500, "Sandwich");
+      Product YoungLeaf = new Product("어린잎채소샌드위치", 5000, "Sandwich");
 
-      Product Milk = new Product("밀크 아이스크림", 2000, "Icecream");
+      Product Milk = new Product("밀크아이스크림", 2000, "Icecream");
 
       this.sideMenu()[0] = PeachCake;
       this.sideMenu()[1] = CreamCheeseCake;
@@ -203,9 +203,9 @@ public class Menu {
 
    public void fixedSeasonMenu() {
 
-      Product DutchCoffeeIce = new Product("더치 커피 빙수", 9800, "Season");
-      Product MangoIce = new Product("망고 빙수", 10800, "Season");
-      Product BerryIce = new Product("베리 빙수", 10800, "Season");
+      Product DutchCoffeeIce = new Product("더치커피빙수", 9800, "Season");
+      Product MangoIce = new Product("망고빙수", 10800, "Season");
+      Product BerryIce = new Product("베리빙수", 10800, "Season");
 
       this.seasonMenu()[0] = DutchCoffeeIce;
       this.seasonMenu()[1] = MangoIce;
@@ -288,38 +288,46 @@ public class Menu {
       switch (findType) {
       case "Coffee":
 
-         for (int i = 0; i < this.coffeeMenu().length; i++) {
-            if (this.coffeeMenu()[i].name() == findName)
+         for (int i = 0; i < this.coffeeMenu().length - 1; i++) {
+            if (this.coffeeMenu()[i].name() == findName) {
                return this.coffeeMenu()[i];
+            } else {
+               AppIO.outputLine("찾고자하는 메뉴가 Coffee에 존재하지 않습니다.");
+            }
          }
-         AppIO.outputLine("찾고자하는 메뉴가 Coffee에 존재하지 않습니다.");
          break;
 
       case "Drink":
 
-         for (int i = 0; i < this.drinkMenu().length; i++) {
-            if (this.drinkMenu()[i].name() == findName)
+         for (int i = 0; i < this.drinkMenu().length - 1; i++) {
+            if (this.drinkMenu()[i].name() == findName) {
                return this.drinkMenu()[i];
+            } else {
+               AppIO.outputLine("찾고자하는 메뉴가 Ade에 존재하지 않습니다.");
+            }
          }
-         AppIO.outputLine("찾고자하는 메뉴가 Ade에 존재하지 않습니다.");
          break;
 
       case "Side":
 
-         for (int i = 0; i < this.sideMenu().length; i++) {
-            if (this.sideMenu()[i].name() == findName)
+         for (int i = 0; i < this.sideMenu().length - 1; i++) {
+            if (this.sideMenu()[i].name() == findName) {
                return this.sideMenu()[i];
+            } else {
+               AppIO.outputLine("찾고자하는 메뉴가 Smoothie에 존재하지 않습니다");
+            }
          }
-         AppIO.outputLine("찾고자하는 메뉴가 Smoothie에 존재하지 않습니다");
          break;
 
       case "Season":
 
-         for (int i = 0; i < this.seasonMenu().length; i++) {
-            if (this.seasonMenu()[i].name() == findName)
+         for (int i = 0; i < this.seasonMenu().length - 1; i++) {
+            if (this.seasonMenu()[i].name() == findName) {
                return this.seasonMenu()[i];
+            } else {
+               AppIO.outputLine("찾고자하는 메뉴가 Season에 존재하지 않습니다.");
+            }
          }
-         AppIO.outputLine("찾고자하는 메뉴가 Season에 존재하지 않습니다.");
          break;
 
       default:
