@@ -91,13 +91,23 @@ public class AppController {
    private void confirmCustomer() { // 고객 정보 확인 메소드
       appIO.PhoneNumberToFind(); // "[PONKU] 검색하고자 하는 고객번호를 입력해주세요."
       String phoneNumber = sc.nextLine();
-
-      if (customer.customerIndex(phoneNumber) == -1)
+      int customerIndex = customer.customerIndex(phoneNumber);
+      if (customerIndex == -1)
          AppIO.outputLine("[PONKU]해당 번호의 고객이 존재하지 않습니다.");
       else
-         customer.findInfo(phoneNumber);
+         findInfo(customerIndex);
    }
-
+   
+   private void findInfo(int customerIndex){
+	   AppIO.outputLine("[PONKU] "+customer.returnPhoneNumber(customerIndex)+" 번호의 고객 정보");
+	   AppIO.outputLine("이름 : "+customer.returnName(customerIndex));
+	   AppIO.outputLine("등급 : "+customer.returnGrade(customerIndex));
+	   AppIO.outputLine("현재 포인트 : "+customer.returnPoint(customerIndex));
+	   AppIO.outputLine("업그레드까지 남은 포인트 : "+customer.remainedPointToUpgrade(customerIndex));
+	   AppIO.outputLine("가장 많이 먹은 메뉴: "+customer.returnPattern(customerIndex));
+	   AppIO.outputLine("가장 많이 먹은 메뉴의 수 "+customer.returnHowManyDrinksOfPattern(customerIndex));
+   }
+   
    private void addMenu() { // 메뉴 추가 메소드
       AppIO.outputLine("[PONKU] 추가하고자 하는 메뉴 이름을 입력하세요.");
       String n = sc.nextLine(); // 메뉴 이름

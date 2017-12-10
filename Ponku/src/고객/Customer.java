@@ -40,6 +40,14 @@ public class Customer {
 		return Integer.toString(customers[customerIndex].getPoint());
 	}
 	
+	public String returnPhoneNumber(int customerIndex){
+		return customers[customerIndex].getPhoneNumber();
+	}
+	
+	public int remainedPointToUpgrade(int customerIndex){
+		 return customers[customerIndex].PointToUpgrade()- customers[customerIndex].getPoint();
+	}
+	
 	public String returnPattern(int customerIndex){
 		if(customers[customerIndex].getPattern().getBest()==null)
 			return "구매기록이 없어요.";
@@ -53,21 +61,10 @@ public class Customer {
 	
 	public int customerIndex(String a){ 
 		for(int i = 0; i < numberOfCustomer; i++){
-			if(a.equals(customers[i].getphonenumber()))
+			if(a.equals(customers[i].getPhoneNumber()))
 				return i;
 		}
 		return -1;	//오류시 -1 반환 
-	}
-	
-	public void findInfo(String phoneNum){
-		
-		System.out.println(phoneNum+"에 대한 정보");
-		int customerIndex = customerIndex(phoneNum);
-		System.out.println("등급: "+returnGrade(customerIndex));
-		System.out.println("이름: "+returnName(customerIndex));
-		System.out.println("포인트: "+customers[customerIndex].getPoint());
-		System.out.println("가장 많이먹은 메뉴: "+returnPattern(customerIndex));
-		System.out.println("가장 많이먹은 메뉴의 수: "+returnHowManyDrinksOfPattern(customerIndex));
 	}
 	
 	private void resize(){

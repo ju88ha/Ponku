@@ -9,13 +9,13 @@ public class Customer_Pattern {
 	
 	public Customer_Pattern(){
 		purchased = new Product[10];
-		best = new Product();
+		best = new Product("¾øÀ½",0,"");
 		numOfBest = 0;
 	}
 	
 	public void addPattern(Product purchasedOne){
-		for(int i = 0; i<purchased.length-1;i++)
-			purchased[i+1] = purchased[i];
+		for(int i = purchased.length -1 ; i > 0;i--)
+			purchased[i] = purchased[i-1];
 		purchased[0] = purchasedOne;
 		makePattern();
 	}
@@ -23,8 +23,8 @@ public class Customer_Pattern {
 	public void makePattern(){
 		int[] num = new int[purchased.length];
 		
-		for(int i = 0; i<purchased.length;i++){
-			for(int j = 0; j<purchased.length ; j++){
+		for(int i = 0; i<purchased.length && purchased[i] != null ;i++){
+			for(int j = 0; j<purchased.length  && purchased[j] != null; j++){
 				if(purchased[i]==purchased[j]){
 					num[i]++;
 				}

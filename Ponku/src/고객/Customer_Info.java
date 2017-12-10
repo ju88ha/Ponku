@@ -36,12 +36,26 @@ public class Customer_Info {
 		return this.grade;
 	}
 	
-	public String getphonenumber(){
+	public String getPhoneNumber(){
 		return this.phonenumber;
 	}
 
 	public Customer_Pattern getPattern() {
 		return pattern;
+	}
+	
+	public int PointToUpgrade(){
+		switch(this.grade.getGrade()){
+		case 0:
+			return 4000;
+		case 1:
+			return 10000;
+		case 2:
+			return 17000;
+		case 3:
+			return 0;
+		}
+		return -1;
 	}
 
 	public int getPoint() {
