@@ -289,7 +289,7 @@ public class Menu {
       case "Coffee":
 
          for (int i = 0; i < this.coffeeMenu().length - 1; i++) {
-            if (this.coffeeMenu()[i].name() == findName)
+            if (this.coffeeMenu()[i].name().equals(findName))
                return this.coffeeMenu()[i];
          }
          AppIO.outputLine("찾고자하는 메뉴가 Coffee에 존재하지 않습니다.");
@@ -298,7 +298,7 @@ public class Menu {
       case "Drink":
 
          for (int i = 0; i < this.drinkMenu().length - 1; i++) {
-            if (this.drinkMenu()[i].name() == findName)
+            if (this.drinkMenu()[i].name().equals(findName))
                return this.drinkMenu()[i];
          }
          AppIO.outputLine("찾고자하는 메뉴가 Ade에 존재하지 않습니다.");
@@ -307,7 +307,7 @@ public class Menu {
       case "Side":
 
          for (int i = 0; i < this.sideMenu().length - 1; i++) {
-            if (this.sideMenu()[i].name() == findName)
+            if (this.sideMenu()[i].name().equals(findName))
                return this.sideMenu()[i];
          }
          AppIO.outputLine("찾고자하는 메뉴가 Smoothie에 존재하지 않습니다");
@@ -316,7 +316,7 @@ public class Menu {
       case "Season":
 
          for (int i = 0; i < this.seasonMenu().length - 1; i++) {
-            if (this.seasonMenu()[i].name() == findName)
+            if (this.seasonMenu()[i].name().equals(findName))
                return this.seasonMenu()[i];
          }
          AppIO.outputLine("찾고자하는 메뉴가 Season에 존재하지 않습니다.");
@@ -338,7 +338,7 @@ public class Menu {
       case "Coffee":
 
          for (int i = 0; i < this.coffeeMenu().length - 1; i++) {
-            if (this.coffeeMenu()[i].name() == findName) {
+            if (this.coffeeMenu()[i].name().equals(findName)) {
 
                this.coffeeMenu()[i] = null;
 
@@ -356,7 +356,7 @@ public class Menu {
       case "Drink":
 
          for (int i = 0; i < this.drinkMenu().length - 1; i++) {
-            if (this.drinkMenu()[i].name() == findName) {
+            if (this.drinkMenu()[i].name().equals(findName)) {
 
                this.drinkMenu()[i] = null;
 
@@ -373,7 +373,7 @@ public class Menu {
       case "Side":
 
          for (int i = 0; i < this.sideMenu().length - 1; i++) {
-            if (this.sideMenu()[i].name() == findName) {
+            if (this.sideMenu()[i].name().equals(findName)) {
                this.sideMenu()[i] = null;
 
                for (int j = i + 1; j < this.sideMenu().length - 1; j++) {
@@ -389,7 +389,7 @@ public class Menu {
       case "Season":
 
          for (int i = 0; i < this.seasonMenu().length - 1; i++) {
-            if (this.seasonMenu()[i].name() == findName) {
+            if (this.seasonMenu()[i].name().equals(findName)) {
                this.seasonMenu()[i] = null;
 
                for (int j = i + 1; j < this.seasonMenu().length - 1; j++) {
