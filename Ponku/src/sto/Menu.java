@@ -1,6 +1,6 @@
-package 매장;
+package sto;
 
-import 공통.AppIO;
+import all.AppIO;
 
 public class Menu {
 

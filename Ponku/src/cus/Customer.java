@@ -1,6 +1,6 @@
-package 고객;
+package cus;
 
-import 매장.Product;
+import sto.Product;
 
 public class Customer {
 	public Customer_Info customers[];	//고객 저장 자료구조

@@ -1,4 +1,4 @@
-package ∏≈¿Â;
+package sto;
 
 public class Product {
 	private String _name;

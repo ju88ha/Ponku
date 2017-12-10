@@ -1,11 +1,11 @@
-package 공통;
+package all;
 
 import java.util.Scanner;
 
-import 매장.Menu;
-import 매장.Product;
-import 매장.Store;
-import 고객.Customer;
+import cus.Customer;
+import sto.Menu;
+import sto.Product;
+import sto.Store;
 
 public class AppController {
    // AppController 변수

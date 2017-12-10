@@ -1,4 +1,4 @@
-package °øÅë;
+package all;
 
 public class AppIO {
 

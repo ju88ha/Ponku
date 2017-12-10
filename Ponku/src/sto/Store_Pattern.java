@@ -1,4 +1,4 @@
-package 매장;
+package sto;
 
 public class Store_Pattern { //사람들이 가장 많이 구매하는 거
 	private Product[] purchased;

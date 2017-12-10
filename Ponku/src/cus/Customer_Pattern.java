@@ -1,6 +1,6 @@
-package ∞Ì∞¥;
+package cus;
 
-import ∏≈¿Â.Product;
+import sto.Product;
 
 public class Customer_Pattern {
 	private Product purchased[];

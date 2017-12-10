@@ -1,4 +1,4 @@
-package ¸ÅÀå;
+package sto;
 
 public class Store {
 	private Menu menu;

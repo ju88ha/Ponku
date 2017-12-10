@@ -1,4 +1,4 @@
-package °í°´;
+package cus;
 
 public class Customer_Grade {
 	private int grade;
