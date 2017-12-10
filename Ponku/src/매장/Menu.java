@@ -60,7 +60,7 @@ public class Menu {
       this.setSideMenu(new Product[15]);
       this.setSeasonMenu(new Product[15]);
 
-      //this.fixedAllMenu();
+      this.fixedAllMenu();
 
    }
 
