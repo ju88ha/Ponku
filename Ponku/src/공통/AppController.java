@@ -19,6 +19,7 @@ public class AppController {
 
    public void run() { // AppContoller 실행 메소드
       appIO.start(); // "[PONKU] 프로그램을 시작합니다."
+	  store.getMenu().fixedAllMenu();	// 메뉴 초기화
       int GoOrStop = runtheProgram();   // 프로그램 목록 선택 메소드
       while (GoOrStop != 0) {   // 선택한 번호가 0이 아닌 동안
          switch (GoOrStop) {
