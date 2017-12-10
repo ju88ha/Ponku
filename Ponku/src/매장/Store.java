@@ -25,6 +25,10 @@ public class Store {
 		this.store_pattern = store_pattern;
 	}
 	
+	public Product findMenu(String name,String type){
+		return menu.findMenu(name, type);
+	}
+	
 	
 	public void addMenu(String name, int cost, String type){
 		Product newMenu = new Product(name,cost,type);

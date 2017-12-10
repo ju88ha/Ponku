@@ -20,13 +20,11 @@ public class Customer {
 		}
 	}
 	
-	public void sellProduct(Product sold,String phoneNum){
-		int customerIndex = customerIndex(phoneNum);
+	public void sellProduct(Product sold, int customerIndex){
 		customers[customerIndex].sellProduct(sold);
 	}
 	
-	public void cutomerPattern(String phoneNum){
-		int customerIndex = customerIndex(phoneNum);
+	public void cutomerPattern(int customerIndex){
 		customers[customerIndex].bestInPattern();
 	}
 	
@@ -43,7 +41,7 @@ public class Customer {
 	}
 	
 	public String returnPattern(int customerIndex){
-		if(customers[customerIndex].getPattern().getBest().equals(null))
+		if(customers[customerIndex].getPattern().getBest().name().equals(null))
 			return "구매기록이 없어요.";
 		else
 			return customers[customerIndex].getPattern().getBest().name();
@@ -51,6 +49,14 @@ public class Customer {
 	
 	public int returnHowManyDrinksOfPattern(int customerIndex){
 		return customers[customerIndex].getPattern().getNumOfBest();
+	}
+	
+	public int customerIndex(String a){ 
+		for(int i = 0; i < numberOfCustomer; i++){
+			if(a.equals(customers[i].getphonenumber()))
+				return i;
+		}
+		return -1;	//오류시 -1 반환 
 	}
 	
 	public void findInfo(String phoneNum){
@@ -62,14 +68,6 @@ public class Customer {
 		System.out.println("포인트: "+customers[customerIndex].getPoint());
 		System.out.println("가장 많이먹은 메뉴: "+returnPattern(customerIndex));
 		System.out.println("가장 많이먹은 메뉴의 수: "+returnHowManyDrinksOfPattern(customerIndex));
-	}
-	
-	private int customerIndex(String a){ 
-		for(int i = 0; i < customers.length; i++){
-			if(a.equals(customers[i].getphonenumber()))
-				return i;
-		}
-		return -1;	//오류시 -1 반환 
 	}
 	
 	private void resize(){

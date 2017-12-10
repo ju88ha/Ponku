@@ -32,7 +32,7 @@ public class AppController {
          case 3:   // 고객 정보 확인 메소드
             confirmCustomer();
             break;
-//         case 4:   // 빼놓자
+//         case 4:   // 메뉴 추가는 제외함
 //            addMenu();
 //            break;
          default:   // 1,2,3,4 이내의 숫자가 아니라면
@@ -59,12 +59,18 @@ public class AppController {
 
    private void sellProduct() {   // 메뉴 판매 메소드
       AppIO.outputLine("[PONKU] 판매하고자하는 메뉴의 이름을 적어주세요.");
-      String productToSell = sc.next();
-      Product p = new Product(productToSell);
-      AppIO.outputLine("[PONKU] 포인트를 적립할 고객번호 11자리를 입력해 주세요.");
+      String nameToSell = sc.nextLine();
+      AppIO.outputLine("[PONKU] 판매하고자하는 메뉴의 타입을 적어주세요.");
+      String typeToSell = sc.nextLine();
+      Product p = store.findMenu(nameToSell, typeToSell);
+      if(p == null)	// 못찾았을 경우
+    	  return;
+      AppIO.outputLine("[PONKU] 포인트를 적립할 고객번호 8자리를 입력해 주세요.");
       String num = sc.next();
-
-      customer.sellProduct(p, num);
+      if(customer.customerIndex(num)==-1)
+    	  AppIO.outputLine("[PONKU] 포인트를 적립할 고객이 저장되어 있지 않습니다.");
+      else
+    	  customer.sellProduct(p, customer.customerIndex(num));
    }
 
    private void addCustomer() {   // 고객 추가 메소드
@@ -72,15 +78,20 @@ public class AppController {
       String phoneNumber = sc.next();
       appIO.NameToAdd();   // "[PONKU] 추가하고자 하는 고객 이름을 입력하세요."
       String name = sc.next();
-      
-      customer.addCustomer(phoneNumber, name);
+      if(customer.customerIndex(phoneNumber)!=-1)
+    	  AppIO.outputLine("이미 같은 번호의 고객이 존재합니다.");
+      else
+    	  customer.addCustomer(phoneNumber, name);
    }
 
    private void confirmCustomer() {   // 고객 정보 확인 메소드
       appIO.PhoneNumberToFind();   // "[PONKU] 검색하고자 하는 고객번호를 입력해주세요."
       String phoneNumber = sc.next();
       
-      customer.findInfo(phoneNumber);
+      if(customer.customerIndex(phoneNumber)==-1)
+    	  AppIO.outputLine("[PONKU]해당 번호의 고객이 존재하지 않습니다.");
+      else
+    	  customer.findInfo(phoneNumber);
    }
    
    private void addMenu() {   // 메뉴 추가 메소드
